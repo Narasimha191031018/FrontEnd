@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+<style>
+    form{
+        border: solid 2px black;
+        width: 333px;
+        height: 137px;
+        text-align: center;
+        margin-top: 150px;
+        margin-left: 271px;
+        padding-top: 42px;
+        padding-right: 40px;
+        padding-left: 40px;
+        background-color: aqua;
+    }
+
+    .buttons{
+        text-align: center;
+        word-spacing: 30px;
+    }
+</style>
+
+</head>
+<body>
+    <form>
+        <div class="inpt">
+            <label for="number1">Enter Your 1<sup>st</sup> Number:</label>
+            <input type="number" id="number1" placeholder="Enter first number"><br>
+            <label for="number2">Enter Your 2<sup>nd</sup> Number:</label>
+            <input type="number" id="number2" placeholder="Enter first number"><br>
+        </div>
+<br>
+        <div class="buttons">
+            <button type="button" onclick="addNumbers()">Add</button>
+            <button type="button" onclick="subNumbers()">Sub</button>
+            <button type="button" onclick="mulNumbers()">Mul</button>
+            <button type="button" onclick="divNumbers()">Div</button>
+        </div>
+        <h4 id="result">Result:</h4>
+    </form>
+<script>
+    function addNumbers() {
+      const num1 = parseInt(document.getElementById('number1').value);
+      const num2 = parseInt(document.getElementById('number2').value);
+      const resultField = document.getElementById('result');
+      const sum = num1 + num2;
+      resultField.textContent = `Result: ${sum}`;
+    }
+
+    function subNumbers() {
+      const num1 = parseInt(document.getElementById('number1').value);
+      const num2 = parseInt(document.getElementById('number2').value);
+      const resultField = document.getElementById('result');
+      const sub = num2-num1;
+      resultField.textContent = `Result: ${sub}`;
+    }
+
+    function mulNumbers() {
+      const num1 = parseInt(document.getElementById('number1').value);
+      const num2 = parseInt(document.getElementById('number2').value);
+      const resultField = document.getElementById('result');
+      const mul = num1 * num2;
+      resultField.textContent = `Result: ${mul}`;
+    }
+
+    function divNumbers() {
+      const num1 = parseInt(document.getElementById('number1').value);
+      const num2 = parseInt(document.getElementById('number2').value);
+      const resultField = document.getElementById('result');
+      const div = num1 / num2;
+      resultField.textContent = `Result: ${div}`;
+    }
+</script>
+</body>
+</html>
