@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image</title>
+    <style>
+        #actorName {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        .box{
+            border: 3px solid black;
+            height: 327px;
+            width: 286px;
+            text-align: center;
+            padding: 20px;
+            background-color: lightgreen;
+            margin-left: 461px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <img id="myImg" src="../images/ntr.jpg" alt="Image" width="150" height="200">
+        </div>
+        <p id="actorName">NTR</p>
+        <br>
+        <div>
+            <button onclick="changeActor(0)">NTR</button>
+            <button onclick="changeActor(1)">Allu Arjun</button>
+            <button onclick="changeActor(2)">Mahesh</button>
+            <button onclick="changeActor(3)">Prabhas</button>
+        </div>
+    </div>
+
+    <script>
+        // Define actor data
+        const actors = [
+            { name: "NTR", image: "../images/ntr.jpg" },
+            { name: "Allu Arjun", image: "../images/AA.jpg" },
+            { name: "Mahesh", image: "../images/mahesh.jpg" },
+            { name: "Prabhas", image: "../images/Prabhas.jpg" }
+        ];
+
+        // Function to change actor's image and name
+        function changeActor(index) {
+            const imageElement = document.getElementById('myImg');
+            const nameElement = document.getElementById('actorName');
+            
+            const actor = actors[index]; // Get actor data based on index
+
+            // Update the image source and actor name
+            imageElement.src = actor.image;
+            nameElement.textContent = actor.name;
+        }
+    </script>
+</body>
+</html>
