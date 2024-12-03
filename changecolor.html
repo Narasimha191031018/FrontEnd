@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Color Change</title>
+    <style>
+        .signal {
+            border: 1px solid black;
+            margin-left: 500px;
+            margin-right: 685px;
+        }
+        .red, .green, .yellow {
+            height: 170px;
+            width: 170px;
+            border: 2px solid black;
+            margin-top: 30px;
+            margin-left: 80px;
+            border-radius: 83.33px;
+            text-align: center;
+            line-height: 170px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="signal">
+        <div class="red" id="red">red</div>
+        <div class="yellow" id="yellow">yellow</div>
+        <div class="green" id="green">green</div>
+    </div>
+    <script>
+        const redLight = document.getElementById("red");
+        const yellowLight = document.getElementById("yellow");
+        const greenLight = document.getElementById("green");
+
+        function changeLight() {
+            setTimeout(() => {
+                redLight.style.backgroundColor = "red";
+                setTimeout(() => {
+                    redLight.style.backgroundColor = "white";
+                    yellowLight.style.backgroundColor = "yellow";
+                    setTimeout(() => {
+                        yellowLight.style.backgroundColor = "white";
+                        greenLight.style.backgroundColor = "green";
+                        setTimeout(() => {
+                            greenLight.style.backgroundColor = "white";
+                            changeLight(); // Repeat the sequence
+                        }, 3000);
+                    }, 3000);
+                }, 3000);
+            }, 0);
+        }
+
+        changeLight();
+    </script>
+</body>
+</html>
